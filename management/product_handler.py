@@ -16,3 +16,17 @@ def get_products_by_type(string):
         if string == typeProduct:
             list.append(product)
     return list
+
+
+def add_product(menu, **kwargs):
+    listId = []
+    for product in products:
+        idProducts = product["_id"]
+        listId.append(idProducts)
+        order = sorted(listId)
+        id = order[-1] + 1
+    if menu == []:
+        id = 1
+    kwargs["_id"] = id
+    menu.append(kwargs)
+    return kwargs
